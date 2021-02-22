@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.min.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <title>Calculation of the Municipal Tax on Transfer of Property (IMT)</title>
+
+  </head>
+
+  <body>
+
+    <section id="property-calculator">
+
+	<form id="top-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 offset-md-2 col-md-10 col-lg-10">
+          	<h3 style="padding-bottom: 10px;">IMT CALCULATOR</h3>
+            <p class="text-1" style="padding-bottom: 25px;">The Municipal Property Transfer Tax (Imposto Municipal sobre a Transmissão Onerosa de Imóveis or IMT) is a tax on transfers of Real Estate in Portuguese territory.</p>
+          </div>
+
+	        <div class="col-sm-12 offset-md-2 col-md-4 col-lg-4">                <!-- Property location -->
+	          <p class="imt-subitile">Select property location</p>       
+	          <div class="row">
+	            <div id="mobile_2" class="col-sm-6 col-md-6 property-location">
+	              <div class="form-check text-center">
+	                <input class="form-check-input input-hidden" type="radio" name="select-location" id="continent-location"  value="1" onchange="show2(); activate_continent(); button_continental ();" checked>
+	                <button type="button" id="button-continental"><label class="form-check-label radio-title " for="continent-location" style="color: transparent;">Continental Portugal andan<br>Continental Portugal andan<br>Continental Portugal andan<br>Continental Portugal andan<br>Continental Portugal andan<br>Continental Portugal andan<br>Continental Portugal andan<br>Continental Portugal andan<br>Continental Portugal andan<br></label></button>
+	                <label id="continent-location-label" class="form-check-label radio-title" for="continent-location"><br>Continental Portugal</label>
+	              </div>
+	            </div>
+	            <div id="mobile_1" class="col-sm-6 col-md-4 col-lg-4">
+	              <div class="form-check text-center">
+	                <input class="form-check-input input-hidden" type="radio" name="select-location" id="island-location" value="0" onchange="show(this.value); activate_islands(); button_island ();">
+	                <button type="button" id="button-island"><label class="form-check-label radio-title " for="island-location" style="color: transparent;">Azores and Madeira Isands<br>Azores and Madeira Isands<br>Azores and Madeira Isands<br>Azores and Madeira Isands<br>Azores and Madeira Isands<br>Azores and Madeira Isands<br>Azores and Madeira Isands<br>Azores and Madeira Isands<br>Azores and Madeira Isands<br>Azores and Madeira Isands<br></label></button>
+	                <label id="button-island-label" class="form-check-label radio-title " for="island-location"><br>Azores and Madeira Islands</label>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 property-type">               
+              <p class="imt-subitile">Select property type</p>  
+
+              <div id="hidden-property" class="" style="display: none;">     <!-- HIDDEN -->
+                <div class="row" >
+                  <div class="col-sm-12 col-md-4">          
+                    <div class="form-check text-center">
+                      <input class="form-check-input" type="radio" name="hidden" disabled> 
+                      <label class="form-check-label radio-title " for="property-own-1">Own and<br>permanent<br>housing</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-4">
+                    <div class="form-check text-center">
+                      <input class="form-check-input" type="radio" name="hidden" disabled>
+                      <label class="form-check-label radio-title " for="property-secondary-1">Secondary<br>housing<br>or lease</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-4">
+                    <div class="form-check text-center">
+                      <input class="form-check-input" type="radio" name="hidden" disabled>
+                      <label class="form-check-label radio-title " for="property-rustic-1">Rustic<br>Buildings</label>
+                    </div>
+                  </div>
+                  <div class="w-100"></div>
+                </div>
+               </div>
+	
+              <div id="continent-property" class="" >  <!-- Property Type Continent-->
+                <div class="row" >
+                  <div id="mobile_3" class="col-sm-4 col-md-4">          
+                    <div class="form-check text-center">
+	                  <input class="form-check-input input-hidden" type="radio" name="select-type-continent" id="property-own-1" value="0.0458" onchange="button_own ();" checked> 
+	                  <button type="button" id="button-own"><label class="form-check-label radio-title " for="property-own-1" style="color: transparent;">Own permanent<br>Own permanent<br>Own permanent<br>Own permanent<br>Own permanent<br>Own permanent<br></label></button>
+	                  <label id="button-own-label" class="form-check-label radio-title " for="property-own-1"><br>Own and<br>permanent<br>housing</label>
+                    </div>
+                  </div>
+                  <div id="mobile_4" class="col-sm-4 col-md-4">
+                    <div class="form-check text-center">                   
+	                  <input class="form-check-input input-hidden" type="radio" name="select-type-continent" id="property-secondary-1" value="0.0485" onchange="button_second ();">
+	                  <button type="button" id="button-second"><label class="form-check-label radio-title " for="property-secondary-1" style="color: transparent;">Secondary hous<br>Secondary hous<br>Secondary hous<br>Secondar hous<br>Secondar hous<br>Secondar hous<br></label></button>
+	                  <label id="button-second-label" class="form-check-label radio-title " for="property-secondary-1"><br>Secondary<br>housing<br>or lease</label>
+                    </div>
+                  </div>
+                  <div id="mobile_5" class="col-sm-4 col-md-4">
+                    <div class="form-check text-center">
+                      <input class="form-check-input input-hidden" type="radio" name="select-type-continent" id="property-rustic-1" value="0.05" onchange="button_rustic ();">
+                      <button type="button" id="button-rustic"><label class="form-check-label radio-title " for="property-rustic-1" style="color: transparent;">Rustic Buildings<br>Rustic Buildings<br>Rustic Buildings<br>Rustic Buildings<br>Rustic Buildings<br>Rustic Buildings<br></label></button>
+                      <label id="button-rustic-label" class="form-check-label radio-title " for="property-rustic-1"><br>Rustic<br>Buildings</label>
+                    </div>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-sm-12 col-md-4 d-none">
+                    <div class="form-check text-center">
+                      <input class="form-check-input" type="radio" name="select-type-continent" id="property-null-1" value="1">
+                      <label class="form-check-label radio-title" for="property-null-1">Hidden</label>
+                    </div>
+                  </div>
+                </div>
+              </div>	
+  			  
+  			     <div id="island-property" style="display: none;">	    <!-- Property Type Island-->
+                <div class="row" >
+                  <div id="mobile_6" class="col-sm-4 col-md-4">         
+                    <div class="form-check text-center">
+                      <input class="form-check-input input-hidden" type="radio" name="select-type-island" id="property-own" value="0.0375" onchange="button_own_isl();"> 
+                      <button type="button" id="button-own-1"><label class="form-check-label radio-title " for="property-own" style="color: transparent;">Own permanent<br>Own permanent<br>Own permanent<br>Own permanent<br>Own permanent<br>Own permanent<br></label></button>
+	                  <label id="button-own-1-label" class="form-check-label radio-title " for="property-own"><br>Own and<br>permanent<br>housing</label>
+                    </div>
+                  </div>
+                  <div id="mobile_7" class="col-sm-4 col-md-4">
+                    <div class="form-check text-center">
+                      <input class="form-check-input input-hidden" type="radio" name="select-type-island" id="property-secondary" value="0.0408" onchange="button_second_isl(); ">
+                      <button type="button" id="button-second-1"><label class="form-check-label radio-title " for="property-secondary" style="color: transparent;">Secondary hous<br>Secondary hous<br>Secondary hous<br>Secondar hous<br>Secondar hous<br>Secondar hous<br></label></button>
+	                  <label id="button-second-1-label" class="form-check-label radio-title " for="property-secondary"><br>Secondary<br>housing<br>or lease</label>
+                    </div>
+                  </div>
+                  <div id="mobile_8" class="col-sm-4 col-md-4">
+                    <div class="form-check text-center">
+                      <input class="form-check-input input-hidden" type="radio" name="select-type-island" id="property-rustic" value="0.05" onchange="button_rustic_isl();">
+                      <button type="button" id="button-rustic-1"><label class="form-check-label radio-title " for="property-rustic" style="color: transparent;">Rustic Buildings<br>Rustic Buildings<br>Rustic Buildings<br>Rustic Buildings<br>Rustic Buildings<br>Rustic Buildings<br></label></button>
+                      <label id="button-rustic-1-label" class="form-check-label radio-title " for="property-rustic"><br>Rustic<br>Buildings</label>
+                    </div>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-sm-12 col-md-4 d-none">
+                    <div class="form-check text-center">
+                      <input class="form-check-input" type="radio" name="select-type-island" id="property-null" value="1" checked>
+                      <label class="form-check-label" for="property-null">Hidden</label>
+                    </div>
+                  </div>
+                </div>
+               </div>
+  			  <br>
+                  
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col-sm-12 offset-md-2 col-md-4 col-lg-4">
+                   
+              <div class="form-group row"> <!-- Property Price -->
+                <div for="price" class="col-sm-12 pb-2 imt-subitile" style="padding-bottom: 25px; padding-top: 20px;">Enter property price</div>     
+                <div class="input-group col-sm-12">
+                  <input data-type="currency" required type="text" class="form-control" id="intl_property_price" placeholder="0,00 €">
+                </div>
+              </div>
+
+            	<button id="calculate_property" name="calculate" type="button" class="btn btn-primary mr-3"  data-toggle="tooltip" rel="tooltip" data-placement="bottom">Calculate</button>
+            	<button id="clear" name="clear" type="reset" class="btn btn-secondary " onclick="show8(); ClearFields();" data-toggle="tooltip" rel="tooltip" data-placement="bottom" title="Clear all data">Clear</button>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4">
+             	<p class="imt-note mt-4">The IMT will be charged on the value contained in the Contract<br>or on the tax equity value (VPT) of the properties, whichever is greater.</p>
+            </div>
+
+        </div>
+       </div>
+	</form>
+
+	<div class="container">
+   <div class="row">
+     <div class="col-sm-12 offset-md-2 col-md-8 col-lg-8">
+       <br><hr><br>
+     </div>
+   </div> 
+  </div>
+
+	<form id="second-form">
+	    <div class="container">
+	      <div class="row">
+
+           <div class="col-sm-12 offset-md-2 col-md-4 col-lg-4">
+          	<h3 class="sim-results">SIMULATION RESULT</h3>
+            <div class="form-group row">
+                <label id="mobile_10" for="imt" class="col-sm-6 result-sub-title">IMT Tax Payable</label>
+                <div id="mobile_9" class="input-group col-sm-6">
+                  <div class="input-group-prepend" style="width: 100%;">
+	                <div id="result_imt_playable" class="input-group-text results" style="width: 100%;">0,00 €</div>
+	        	  </div>
+                </div>
+                <div class="w-100"></div>
+              </div>
+              <div class="form-group row stamp-duty">
+                <label id="mobile_11" for="stamp" class="col-sm-6 result-sub-title">Stamp duty (0.8%)</label>
+                <div id="mobile_12" class="input-group col-sm-6">
+	              <div class="input-group-prepend" style="width: 100%;">
+	                <div id="result_Stamp_Duty_Tax" class="input-group-text results" style="width: 100%;">0,00 €</div>
+	        	  </div>
+                </div>
+                <div class="w-100"></div>
+              </div>
+              <div class="form-group row total-tax">
+                <label id="mobile_13" for="total-pl" class="col-sm-6 result-sub-title blue"><b>Total Tax Payable</b></label>
+                <div id="mobile_14" class="input-group col-sm-6">
+                  <div class="input-group-prepend" style="width: 100%;">
+	                <div id="result_Total_Payable" class="input-group-text results" style="width: 100%;">0,00 €</div>
+	        	  </div>
+                </div>
+                <div class="w-100"></div>
+              </div>
+              <div class="form-group row">
+                <div class="col-12" style="display: block;">
+                  <p id="calculation_block" style="display: none;"> Calculation: (€ 00,00 x 0%) - € 0,00 = € 0,00 </p>
+                  <p id="calculation_block_IF" style="display: none;"> Calculation: (€ 350 000,00 x 0%) - € 0,00 = € 0,00 </p>
+                  <p id="calculation_block_IS" style="display: none;"> Calculation: (€ 350 000,00 x 0%) - € 0,00 = € 0,00 </p>
+                  <p id="calculation_block_CF" style="display: none;"> Calculation: (€ 350 000,00 x 0%) - € 0,00 = € 0,00 </p>
+                  <p id="calculation_block_CS" style="display: none;"> Calculation: (€ 350 000,00 x 0%) - € 0,00 = € 0,00 </p>
+                  <p id="calculation_block_R" style="display: none;"> Calculation: (€ 350 000,00 x 0%) - € 0,00 = € 0,00 </p>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-4">
+            <div id="Continental-First">
+            <h3 class="table">CORRESPONDING<br>SIMPLIFIED TABLE</h3>
+
+            <table class="table" id="table_0" style="display: block;">   <!-- Table 0 TEST-->
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Property Values in €'s</th>
+                  <th scope="col">Tax Rate</th>
+                  <th scope="col">Relief on<br>the tax rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> From 0 to 92 407,00</td>
+                  <td >0%</td>
+                  <td style="text-align: right;">0.00</td>
+                </tr>
+                <tr>
+                  <td>92 407,00 to 126 403,00</td>
+                  <td>2%</td>
+                  <td style="text-align: right;">1 848,14 </td>
+                </tr>
+                <tr>
+                  <td>126 403,00 to 172 348,00</td>
+                  <td>5%</td>
+                  <td style="text-align: right;">5 640,23 </td>
+                </tr>
+                <tr>
+                  <td>172 348,00 to 287 213,00</td>
+                  <td>7%</td>
+                  <td style="text-align: right;">9 087,19 </td>
+                </tr>
+                <tr>
+                  <td>287 213,00 to 574 322,00</td>
+                  <td>8%</td>
+                  <td style="text-align: right;">11 959,32</td>
+                </tr>
+                <tr style=" border-bottom: 1px solid rgb(128, 128, 128);">
+                  <td>574 322,00 and over</td>
+                  <td>6%</td>
+                  <td style="text-align: right;"> 0.00</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table" id="table_1" style="display: none;">   <!-- Table 1 Continental FIRST-->
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Property Values in €'s</th>
+                  <th scope="col">Tax Rate</th>
+                  <th scope="col">Relief on<br>the tax rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> From 0 to 92 407,00</td>
+                  <td style="padding-left: 25px;" >0%</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>92 407,00 to 126 403,00</td>
+                  <td style="padding-left: 25px;">2%</td>
+                  <td>1 848,14 </td>
+                </tr>
+                <tr>
+                  <td>126 403,00 to 172 348,00</td>
+                  <td style="padding-left: 25px;">5%</td>
+                  <td>5 640,23 </td>
+                </tr>
+                <tr>
+                  <td>172 348,00 to 287 213,00</td>
+                  <td style="padding-left: 25px;">7%</td>
+                  <td>9 087,19 </td>
+                </tr>
+                <tr>
+                  <td>287 213,00 to 574 322,00</td>
+                  <td style="padding-left: 25px;">8%</td>
+                  <td>11 959,32</td>
+                </tr>
+                <tr style="border-bottom: 2px solid #e6e6e6;">
+                  <td>574 322,00 and over</td>
+                  <td style="padding-left: 25px;">6%</td>
+                  <td> 0.00</td>
+                </tr>
+              </tbody>
+            </table>
+
+			<table class="table" id="table_2" style="display: none;">         <!-- Table 2 Continental SECOND-->     
+			 <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Property Values in €'s</th>
+                  <th scope="col">Tax Rate</th>
+                  <th scope="col">Relief on<br>the tax rate</th>
+                </tr>
+              </thead>
+               <tbody>
+                <tr>
+                  <td> From 0 to 92 407,00</td>
+                  <td style="padding-left: 25px;">1%</td>
+                  <td> - </td>
+                </tr>
+                <tr>
+                  <td>92 407,00 to 126 403,00</td>
+                  <td style="padding-left: 25px;">2%</td>
+                  <td>924,07</td>
+                </tr>
+                <tr>
+                  <td>126 403,00 to 172 348,00</td>
+                  <td style="padding-left: 25px;">5%</td>
+                  <td>4 716,22</td>
+                </tr>
+                <tr>
+                  <td>172 348,00 to 287 213,00</td>
+                  <td style="padding-left: 25px;">7%</td>
+                  <td>8 163,09</td>
+                </tr>
+                <tr>
+                  <td>287 213,00 to   550 836,00</td>
+                  <td style="padding-left: 25px;">8%</td>
+                  <td>11 035,35</td>
+                </tr>
+                <tr style="border-bottom: 2px solid #e6e6e6;">
+                  <td>550 836,00 and over</td>
+                  <td style="padding-left: 25px;">6%</td>
+                  <td> - </td>
+                </tr>
+              </tbody>
+          	</table>
+
+			<table class="table" id="table_3" style="display: none;">             <!-- Table 3 RUSTIC -->
+			  <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Property Values in €'s</th>
+                  <th scope="col">Tax Rate</th>
+                  <th scope="col">Relief on<br>the tax rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 2px solid #e6e6e6;">
+                  <td> Any Value</td>
+                  <td style="padding-left: 25px;">5%</td>
+                  <td> - </td>
+                </tr>
+              </tbody>
+			</table>
+
+			<table class="table" id="table_4" style="display: none;">           <!-- Table 4 Island FIRST-->
+			 <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Property Values in €'s</th>
+                  <th scope="col">Tax Rate</th>
+                  <th scope="col">Relief on<br>the tax rate</th>
+                </tr>
+              </thead>
+               <tbody>
+                <tr>
+                  <td> From 0 to 115 508,75</td>
+                  <td style="padding-left: 25px;">0%</td>
+                  <td> - </td>
+                </tr>
+                <tr>
+                  <td>115 508,75 to 158 003,75</td>
+                  <td style="padding-left: 25px;">2%</td>
+                  <td> 2 310,18</td>
+                </tr>
+                <tr>
+                  <td>158 003,75 to 215 435,00</td>
+                  <td style="padding-left: 25px;">5%</td>
+                  <td>7 050,29</td>
+                </tr>
+                <tr>
+                  <td>215 435,00 to  359 016,25</td>
+                  <td style="padding-left: 25px;">7%</td>
+                  <td>11 358,99</td>
+                </tr>
+                <tr>
+                  <td>359 016,25 to 717 903,75</td>
+                  <td style="padding-left: 25px;">8%</td>
+                  <td>14 949,15</td>
+                </tr>
+                <tr style="border-bottom: 2px solid #e6e6e6;">
+                  <td>717 903,75 and over</td>
+                  <td style="padding-left: 25px;">6%</td>
+                  <td> - </td>
+                </tr>
+              </tbody>
+			</table>
+
+			<table class="table" id="table_5" style="display: none;">          <!-- Table 5 Island SECOND -->
+			 <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Property Values in €'s</th>
+                  <th scope="col">Tax Rate</th>
+                  <th scope="col">Relief on<br>the tax rate</th>
+                </tr>
+              </thead>
+               <tbody>
+                <tr>
+                  <td>From 0 to 115 508,75</td>
+                  <td style="padding-left: 25px;">1%</td>
+                  <td> - </td>
+                </tr>
+                <tr>
+                  <td>115 508,75 to 158 003,75</td>
+                  <td style="padding-left: 25px;">2%</td>
+                  <td>1 155,09</td>
+                </tr>
+                <tr>
+                  <td>158 003,75 to 215 435,00</td>
+                  <td style="padding-left: 25px;">5%</td>
+                  <td>5 895,20</td>
+                </tr>
+                <tr>
+                  <td>215 435,00 to 359 016,25</td>
+                  <td style="padding-left: 25px;">7%</td>
+                  <td>10 203,90</td>
+                </tr>
+                <tr>
+                  <td>359 016,25 to 688 545,00</td>
+                  <td style="padding-left: 25px;">8%</td>
+                  <td>13 794,06</td>
+                </tr>
+                <tr style="border-bottom: 2px solid #e6e6e6;">
+                  <td>688 545,00 and over</td>
+                  <td style="padding-left: 25px;">6%</td>
+                  <td> - </td>
+                </tr>
+              </tbody>
+            </table>
+
+            </div>
+
+          </div>
+
+         <div class="col-sm-12 offset-md-2 col-md-8 col-lg-8">
+           <hr>
+         </div>
+
+          <div class="col-sm-12 offset-md-2 col-md-8 col-lg-8">
+            <p class="text-2">These values ​​are for information only. Contact Global Citizen Solutions for further details.</p>
+          </div>
+        </div>
+      </div>
+     </form>
+    </section>
+
+    <script src="js/currency.js"></script>  
+    <script src="js/script.js"></script>
+
+    
+
+
+
+
+  </body>
+
+</html>

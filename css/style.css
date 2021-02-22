@@ -1,0 +1,456 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap&subset=greek-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap&subset=latin-ext');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+#property-calculator {
+	font-size: 1rem;
+	font-family: 'Roboto', sans-serif;
+	background-color: #f2f2f2;
+	padding-top: 70px;
+	padding-bottom: 20px;
+	color: #808080;
+}
+
+#property-calculator h3 {
+	text-transform: uppercase;
+	font-size: 24px;
+	color: #1955a6;
+	font-weight: bold;
+}
+
+#property-calculator h3.table {
+	color: #b2b2b2;
+}
+
+#property-calculator .imt-subitile {
+	font-size: 16px;
+	color: #007ac1;
+	line-height: 1.834;
+}
+
+#property-calculator .radio-title {
+	font-size: 12px;
+	color: #808080;
+	line-height: 1.129;
+}
+
+#property-calculator input#intl_property_price {
+	font-size: 13.543px;
+	line-height: 1.262;
+	border: 0px solid white;
+	border-radius: 9px;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 8px;
+}
+
+#property-calculator .results {
+	font-size: 13.543px;
+	line-height: 1.262;
+	border: 0px solid #007ac1;
+	border-radius: 9px;
+	background-color: #007ac1;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #fff;
+}
+
+#property-calculator button#calculate_property {
+	font-size: 16px;
+	font-family: "Roboto";
+	color: #fff;
+	line-height: 1.857;
+	background-color: #e0013f;
+	border-color: #e0013f;
+	padding: 5px 40px;
+	border-radius: 9px;
+}
+	#property-calculator button#calculate_property:hover {
+		background-color: #fff;
+		color: #000;
+	}
+
+#property-calculator button#clear {
+	font-size: 16px;
+	font-family: "Roboto";
+	color: #666;
+	line-height: 1.857;
+	background-color: #fff;
+	border-color: #fff;
+	padding: 5px 40px;
+	border-radius: 9px;
+}
+
+#property-calculator .imt-note {
+	font-size: 10px;
+	font-family: "Roboto";
+	color: rgb(128, 128, 128);
+	font-style: italic;
+	line-height: 1.754;
+	padding-top: 31px;
+}
+
+#property-calculator hr {
+    border-top: 2px solid rgba(0,0,0,.1);
+}
+
+#property-calculator .result-sub-title {
+  font-size: 16px;
+  line-height: 1.834;
+
+}
+
+#property-calculator .result-sub-title.blue {
+	color: #1955a6;
+	text-transform: uppercase;
+}
+
+#property-calculator .text-1 {
+  font-size: 11px;
+  color: rgb(128, 128, 128);
+  line-height: 1.231;
+}
+
+#property-calculator .text-2 {
+  font-size: 10px;
+  color: rgb(128, 128, 128);
+  font-style: italic;
+  line-height: 1.754;
+}
+
+#property-calculator table {
+  font-size: 9px;
+  color: rgb(128, 128, 128);
+}
+
+#property-calculator  .table .thead-dark th {
+    color: rgb(102, 102, 102);
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+#property-calculator .table td, #property-calculator .table th {
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+#property-calculator h3.sim-results {
+	padding-bottom: 30px;
+}
+
+#property-calculator .stamp-duty {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+#property-calculator .total-tax {
+	padding-bottom: 7px;
+}
+
+#property-calculator .input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+#button-continental {
+	background-image: url('https:///madcotransportation.com/property-calculator/img/continent-selected.png');
+	background-size: cover;
+	border: none;
+	width: 164px;
+	height: 136px;
+	border-radius: 12px;
+}
+
+#button-continental:hover {
+	background-image: url(../img/continent-hover.png)!important;
+	background-size: cover;
+}
+
+#button-continental:active  {
+	background-image: url(../img/continent-selected.png);
+	background-size: cover;
+	border: 0px solid white;
+}
+
+#button-continental:focus {
+	background-image: url(../img/continent-selected.png);
+	background-size: cover;
+	border: 0px solid white;
+}
+
+#button-island {
+	background-image: url(../img/island-normal.png);
+	background-size: cover;
+	border: none;
+	width: 164px;
+	height: 136px;
+	border-radius: 12px;
+}
+
+	#button-island:hover {
+		background-image: url(../img/island-hover.png)!important;
+		background-size: cover;
+	}
+
+	#button-island:active  {
+		background-image: url(../img/island-selected.png);
+		background-size: cover;
+		border: 0px solid white;
+	}
+
+	#button-island:focus {
+		background-image: url(../img/island-selected.png);
+		background-size: cover;
+		border: 0px solid white!important;
+	}
+
+#button-own {
+	background-image: url('https:///madcotransportation.com/property-calculator/img/own-selected.png');
+	background-size: cover;
+	border: none;
+	width: 101px;
+	height: 98px;
+	border-radius: 10px;
+}
+
+	#button-own:hover {
+	background-image: url(../img/own-hover.png)!important;
+	background-size: cover;
+}
+
+	#button-own:active  {
+		background-image: url(../img/own-selected.png);
+		background-size: cover;
+		border: 0px solid white;
+	}
+
+	#button-own:focus {
+		background-image: url(../img/own-selected.png);
+		background-size: cover;
+		border: 0px solid white!important;
+	}
+
+#button-second {
+	background-image: url(../img/second-normal.png);
+	background-size: cover;
+	border: none;
+	width: 101px;
+	height: 98px;
+	border-radius: 10px;
+}
+
+	#button-second:hover {
+		background-image: url(../img/second-hover.png)!important;
+		background-size: cover;
+	}
+
+	#button-second:active  {
+		background-image: url(../img/second-selected.png);
+		background-size: cover;
+		border: 0px solid white;
+	}
+
+	#button-second:focus {
+		background-image: url(../img/second-selected.png);
+		background-size: cover;
+		border: 0px solid white!important;
+	}
+
+#button-rustic {
+	background-image: url(../img/rustic-normal.png);
+	background-size: cover;
+	border: none;
+	width: 101px;
+	height: 98px;
+	border-radius: 10px;
+}
+
+	#button-rustic:hover {
+		background-image: url(../img/rustic-hover.png)!important;
+		background-size: cover;
+	}
+
+	#button-rustic:active  {
+		background-image: url(../img/rustic-selected.png);
+		background-size: cover;
+		border: 0px solid white;
+	}
+
+	#button-rustic:focus {
+		background-image: url(../img/rustic-selected.png);
+		background-size: cover;
+		border: 0px solid white!important;
+	}
+
+#button-own-1 {
+	background-image: url('https:///madcotransportation.com/property-calculator/img/own-selected.png');
+	background-size: cover;
+	border: none;
+	width: 101px;
+	height: 98px;
+	border-radius: 10px;
+}
+
+	#button-own-1:hover {
+	background-image: url(../img/own-hover.png)!important;
+	background-size: cover;
+}
+
+	#button-own-1:active  {
+		background-image: url(../img/own-selected.png);
+		background-size: cover;
+		border: 0px solid white;
+	}
+
+	#button-own-1:focus {
+		background-image: url(../img/own-selected.png);
+		background-size: cover;
+		border: 0px solid white!important;
+	}
+
+#button-second-1 {
+	background-image: url(../img/second-normal.png);
+	background-size: cover;
+	border: none;
+	width: 101px;
+	height: 98px;
+	border-radius: 10px;
+}
+
+	#button-second-1:hover {
+		background-image: url(../img/second-hover.png)!important;
+		background-size: cover!important;
+	}
+
+	#button-second-1:active  {
+		background-image: url(../img/second-selected.png);
+		background-size: cover;
+		border: 0px solid white;
+	}
+
+	#button-second-1:focus {
+		background-image: url(../img/second-selected.png);
+		background-size: cover;
+		border: 0px solid white!important;
+	}
+
+#button-rustic-1 {
+	background-image: url(../img/rustic-normal.png);
+	background-size: cover;
+	border: none;
+	width: 101px;
+	height: 98px;
+	border-radius: 10px;
+}
+
+	#button-rustic-1:hover {
+		background-image: url(../img/rustic-hover.png)!important;
+		background-size: cover!important;
+	}
+
+	#button-rustic-1:active  {
+		background-image: url(../img/rustic-selected.png);
+		background-size: cover;
+		border: 0px solid white;
+	}
+
+	#button-rustic-1:focus {
+		background-image: url(../img/rustic-selected.png);
+		background-size: cover;
+		border: 0px solid white!important;
+	}
+
+/* CSS to design */
+
+#property-calculator #button-continental {
+	margin-left: -20px;
+ }
+
+#property-calculator #button-island {
+	margin-left: -27px;
+ }
+
+ #property-calculator #continent-location-label {
+	margin-left: -20px!important;
+ }
+
+#property-calculator #button-island-label {
+	margin-left: 16px;
+ }
+
+#property-calculator #button-own,  #property-calculator #button-own-1 {
+	margin-left: -20px;
+ }
+
+ #property-calculator #button-second,  #property-calculator #button-second-1 {
+	margin-left: -23px;
+ }
+
+ #property-calculator #button-rustic,  #property-calculator #button-rustic-1 {
+	margin-left: -23px;
+ }
+
+ #property-calculator #button-own-label,  #property-calculator #button-own-1-label {
+	margin-left: -17px;
+ }
+
+  #property-calculator #button-second-label,  #property-calculator #button-second-1-label {
+	margin-left: -28px;
+ }
+
+  #property-calculator #button-rustic-label,  #property-calculator #button-rustic-1-label {
+	margin-left: -25px;
+ }
+
+
+ /* Mobile */
+ @media (max-width: 475px){
+
+	#property-calculator #mobile_1, #property-calculator #mobile_2 {
+		width: 50%;
+	}
+
+	#property-calculator #mobile_3, #property-calculator #mobile_4, #property-calculator #mobile_5, #property-calculator #mobile_6, #property-calculator #mobile_7, #property-calculator #mobile_8 {
+		width:  33.333333%;
+	}
+
+	#property-calculator .imt-subitile, #property-calculator .imt-note {
+		padding-top: 0px!important;
+	}
+
+	#property-calculator #button-island-label {
+    	margin-left: -29px;
+	}
+
+	#property-calculator hr {
+		margin-top: -16px;
+	}
+
+	#property-calculator h3.sim-results {
+    	padding-bottom: 10px;
+    	margin-top: -17px;
+	}
+
+	#property-calculator #mobile_10, #property-calculator #mobile_11, #property-calculator #mobile_13 {
+		width: 60%;
+	}
+
+	#property-calculator #mobile_9, #property-calculator #mobile_12, #property-calculator #mobile_14 {
+		width: 40%;
+	}
+
+
+}
+
+
+
